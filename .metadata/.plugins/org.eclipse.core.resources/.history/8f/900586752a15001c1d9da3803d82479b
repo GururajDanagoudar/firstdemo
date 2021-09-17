@@ -1,0 +1,27 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SampleSelinium
+{
+	public static void main(String[] args) throws InterruptedException
+	
+	{
+		//System.setProperty("webdriver.gecko.driver","C:/Users/gururajd/eclipse-workspaceSeleniumProject/SeleniumProject/drivers.gechodriver.exe");
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://www.google.com");
+		driver.manage().window().maximize();
+		WebElement searchbox=driver.findElement(By.name("q"));
+		searchbox.sendKeys("chromeDriver");
+		searchbox.submit();
+		Thread.sleep(5000);
+		driver.quit();
+		
+		
+		
+	}
+
+}

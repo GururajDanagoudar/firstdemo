@@ -1,0 +1,42 @@
+ 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+ 
+
+ 
+/**
+* @author Mukesh_50
+*
+*/
+public class VerifyWordpressLogin 
+{
+ 
+ 
+@Test
+public void verifyValidLogin() throws InterruptedException
+{
+	System.setProperty("webdriver.gecko.driver","C:/Users/gururajd/eclipse-workspaceSeleniumProject/SeleniumProject/drivers.gechodriver.exe");
+ 
+WebDriver driver1=new FirefoxDriver();
+ 
+driver1.manage().window().maximize();
+ 
+driver1.get("http://opensource-demo.orangehrmlive.com/");
+ 
+LoginPage login=new LoginPage(driver1);
+ 
+ 
+ 
+login.clickOnLoginButton();
+Thread.sleep(3000);
+login.loginToWordpress("Admin","admin123");
+
+ 
+ 
+driver1.quit();
+ 
+}
+ 
+ 
+}
